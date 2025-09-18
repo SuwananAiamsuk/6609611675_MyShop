@@ -13,15 +13,18 @@ body{
 .title h1 {
     font-size: 45pt;
     text-align: right;
-    font-family: "Marcellus", system-ui;
+    font-family: "Marcellus";
 }
 
 .storyshop {
     font-size: 20px;
     color: #fff;
-    margin: 10px 10px 0px 20px;
-    padding: 100px;
-    font-family: "Marcellus", system-ui;
+    margin: 20px auto;     /* ให้เว้นนิดหน่อยรอบ ๆ */
+    padding: 20px 40px;    /* ลด padding ลง */
+    max-width: 800px;      /* จำกัดความกว้างข้อความ จะได้ไม่ยาวเกิน */
+    line-height: 1.6;      /* เพิ่มความอ่านง่าย */
+    font-family: "Marcellus";
+    text-align: center;    /* จัดให้อ่านสบาย ๆ */
 }
 
 .storyshop span {
@@ -29,23 +32,23 @@ body{
 }
 
 video {
-    width: 20%;  
+    max-width: 1200px;          /* จำกัดความกว้างสูงสุด เพื่อไม่ให้ใหญ่เกินบนจอใหญ่ */
     display: block;
-    border-radius: 10px; 
-    opacity: 0.7; 
-    float: right;
-    clear: both;
-    margin-left: 50px;
-    margin-top: 70px;
-    margin-right: 120px;
-    border: 5px dashed rgb(207, 194, 176);         
-    
+    margin: 60px auto;          /* จัดให้อยู่กลาง + เว้นระยะด้านบนล่าง */
+    border-radius: 20px;        /* มุมโค้งนุ่มนวล */
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2); /* เงานุ่ม ดูแพง */
+    border: none;               /* เอากรอบ dashed ออก */
+    opacity: 0.95;              /* ให้ชัดขึ้น (ไม่ต้องโปร่งใสเกินไป) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 h4{
-    font-size: 30pt;
+    color:#fff;
+    font-family: fantasy;
+    font-size: 50pt;
     text-align: center;
 }
+
 .products {
     display: flex;
     flex-direction: row; 
@@ -68,24 +71,28 @@ h4{
 .product1 img, .product2 img, .product3 img, .product4 img, .product5 img, .product6 img {
     width: 100%; 
     height: auto; 
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    font-family: "Marcellus";
 }
 .name1,.name2,.name3,.name4,.name5,.name6 {
     font-size: 20pt;
     font-weight: bold;
     color: #46413d;
+    font-family: "Marcellus";
 }
 
 .sub1,.sub2,.sub3,.sub4,.sub5,.sub6 {
     font-size: 12pt;
     color: #555;
     margin: 5px;
+    font-family: "Marcellus";
 }
 
 .price1,.price2,.price3,.price4,.price5,.price6 {
     font-size: 16pt;
     color: #5e462b; 
     font-weight: bold;
+    font-family: "Marcellus";
 }
 
 .contact {
@@ -93,25 +100,26 @@ h4{
     color: #fff;
     padding: 15px 30px;
     text-align: left;
-     font-family: "Marcellus", system-ui;
+    font-family: "Marcellus";
 }
 
 .contact h4 {
-    font-size: 10pt;
+    font-size: 12pt;
     margin-bottom: 20px;
     text-align: left;
 }
 .contact ul li {
-    font-size: 10pt;
+    font-size: 12pt;
     margin-bottom: 10px;
     color: #ccc;
 }
+
 header .top-link {
-    background-color: #f5f5f5;   
+    background-color: #f5f5f5; 
     color: black;
     font-size: 15pt;
     padding: 12px;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: bold;
 }
 
@@ -122,65 +130,43 @@ header .top-link {
   margin: 50px;         
 }
 
-.button-link a {
-  text-decoration: none;
-  font-size: 15pt;
-  color: brown;                 
-  background-color: #f5f5f5;   
-  padding: 12px 24px;
-  border: 2px solid #ccc;     
-  border-radius: 30px;         
-  font-weight: bold;
+nav .button-link {
+  text-decoration: underline;
+  font-size: 20pt;
+  color: rgb(245, 245, 248);                 
+  padding: 10px;            
+  font-weight: lighter;
+  font-family: "Marcellus";
 }
 
-.preproduct1{
+.preproduct1, .preproduct2 {
     display: flex;
-    align-items: center;       /* จัดแนวตรงกลางแนวตั้ง */
-    gap: 1000px;                 /* ระยะห่างระหว่างรูปกับข้อความ */
-    padding: 0px 750px;        /* ระยะห่างจากขอบซ้าย */
+    flex-direction: column;   /* จัดเรียงบนลงล่าง (รูปอยู่บน, ข้อความอยู่ล่าง) */
+    align-items: center;      /* จัดให้อยู่ตรงกลางแนวนอน */
+    justify-content: center;  /* จัดตรงกลางแนวตั้ง */
+    gap: 20px;                /* ระยะห่างระหว่างรูปกับข้อความ */
+    margin: 50px auto;        /* เว้นระยะรอบๆ และจัดตรงกลาง */
+    padding: 0;               /* เอา padding เดิมออก */
 }
 
-.preproduct1 img {
-  width: 400px;              /* ปรับขนาดรูป */
-  height: auto;              /* รักษาอัตราส่วน */
-  border-radius: 10px;  
-  margin: 50px;     
+.preproduct1 img, .preproduct2 img {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+    margin: 0;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2); /* เพิ่มเงาให้ดูแพงขึ้น */
 }
 
-.text-link1 {
-  font-size: 30px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid white;
-  padding: 10px ;
-  border-radius: 30px;
-  font-family: "Marcellus", system-ui;
-}
-
-.preproduct2{
-    display: flex;
-    align-items: center;       /* จัดแนวตรงกลางแนวตั้ง */
-    gap: 1000px;                 /* ระยะห่างระหว่างรูปกับข้อความ */
-    padding: 0px 750px;     /* ระยะห่างจากขอบซ้าย */
-}
-
-.preproduct2 img {
-  width: 400px;              /* ปรับขนาดรูป */
-  height: auto;              /* รักษาอัตราส่วน */
-  border-radius: 10px;       /* ทำให้รูปมุมโค้ง (เลือกใช้หรือไม่ก็ได้) */
-  margin: 50px;
-}
-
-.text-link2 {
-  font-size: 30px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-family: "Marcellus", system-ui;
+.text-link1, .text-link2 {
+    font-size: 28px;
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: "Marcellus";
 }
 
 .vertical1 {
